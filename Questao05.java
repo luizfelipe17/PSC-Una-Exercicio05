@@ -22,23 +22,29 @@ public class Questao05 {
         ArrayList<String> mulheresSim = new ArrayList<String>();
         ArrayList<String> homemSim = new ArrayList<String>();
 
-        System.out.print("TESTE PRODUTO\n\n");
+        System.out.print("TESTE PRODUTO\n");
 
         for (int i = 0; i < 10; i++) {
 
+            System.out.print("\n" + (i + 1) + "º ENTREVISTADO\n");
+            System.out.println("INFORME SEU SEXO:\n"
+                    + "1 - MASCULINO\n"
+                    + "2 - FEMININO");
+            sexo = ler.nextInt();
+
             while (sexo != 1 && sexo != 2) {
 
-                System.out.print("ENTREVISTADO\n");
-                System.out.println("INFORME SEU SEXO:\n"
-                        + "1 - MASCULINO\n"
-                        + "2 - FEMININO");
+                System.out.println("Informe um valor válido");
                 sexo = ler.nextInt();
 
             }
 
+            System.out.print("\nGOSTOU DO NOSSO PRODUTO (S - SIM / N - NÃO): ");
+            avaliacao = ler.nextLine();
+
             while (!avaliacao.equalsIgnoreCase("S") && !avaliacao.equalsIgnoreCase("N")) {
 
-                System.out.print("\nGOSTOU DO NOSSO PRODUTO (S - SIM / N - NÃO): ");
+                System.out.println("Informe um valor válido");
                 avaliacao = ler.nextLine();
 
             }
@@ -59,7 +65,9 @@ public class Questao05 {
 
                 mulheresSim.add(avaliacao);
 
-            } else {
+            } 
+            
+            if (avaliacao.equalsIgnoreCase("N")) {
 
                 pessoasNao.add(avaliacao);
 
@@ -67,7 +75,7 @@ public class Questao05 {
 
         }
 
-        System.out.print("Total de " + pessoasSim.size() + " responderam 'SIM'\n");
+        System.out.print("\n\nTotal de " + pessoasSim.size() + " responderam 'SIM'\n");
         System.out.print("Total de " + pessoasNao.size() + " responderam 'NÃO'\n");
         System.out.print("Total de " + mulheresSim.size() + " mulheres responderam 'SIM'\n");
         System.out.print("Total de " + homemSim.size() + " homens responderam 'SIM'");
