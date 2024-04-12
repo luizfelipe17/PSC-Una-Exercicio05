@@ -11,21 +11,20 @@ public class Questao08 {
 
         Scanner ler = new Scanner(System.in);
 
-        int h = 1, n;
-        ArrayList<Integer> somas = new ArrayList<Integer>();
+        double h = 0;
+        int n;
 
-        System.out.print("Informe um valor: ");
+        System.out.print("H = 1 + 1/2 + 1/3 + 1/4 + ... + 1/N\n"
+                + "Informe um valor: ");
         n = ler.nextInt();
 
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
 
-            h += h / i + 2;
-            somas.add(h);
+            h += 1.0 / i;
 
         }
 
-            System.out.print(h);
-                    
+            System.out.printf("O valor de H será: %.2f",h);       
         
     }
 }
